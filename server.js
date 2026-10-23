@@ -24,13 +24,15 @@ const DB_FILE = path.join(__dirname, 'data', 'database.json');
 // Ensure database file exists
 function loadDatabase() {
   try {
-    if (!fs.existsSync(DB_FILE)) {
-      console.warn(`[DB] Database file not found at ${DB_FILE}. Creating empty initial state.`);
-      return { users: [], concepts: [], questions: [], flashcards: [], attempts: [] };
-    }
-    const raw = fs.readFileSync(DB_FILE, 'utf8');
-    return JSON.parse(raw);
+    delete require.cache[require.resolve('./data/database.json')];
+    return require('./data/database.json');
   } catch (err) {
+    try {
+      if (fs.existsSync(DB_FILE)) {
+        const raw = fs.readFileSync(DB_FILE, 'utf8');
+        return JSON.parse(raw);
+      }
+    } catch (e) {}
     console.error('[DB] Error reading database:', err.message);
     return { users: [], concepts: [], questions: [], flashcards: [], attempts: [] };
   }
@@ -66,7 +68,8 @@ function parseRequestBody(req) {
     req.on('data', chunk => {
       body += chunk.toString();
       if (body.length > 1e6) { // 1MB flood protection
-        req.connection.destroy();
+        if (req.destroy) req.destroy();
+        else if (req.socket && req.socket.destroy) req.socket.destroy();
         reject(new Error('Payload too large'));
       }
     });
@@ -95,7 +98,7 @@ function sendJSON(res, statusCode, data) {
 }
 
 // Server Request Handler
-const server = http.createServer(async (req, res) => {
+async function handleRequest(req, res) {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
   const method = req.method.toUpperCase();
@@ -401,15 +404,25 @@ const server = http.createServer(async (req, res) => {
     const readStream = fs.createReadStream(filePath);
     readStream.pipe(res);
   });
-});
+}
 
-// Start the server
-server.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(` AuraCloud AZ-900 Study Suite Server Online!        `);
-  console.log(` Port:    http://localhost:${PORT}                  `);
-  console.log(` Sign-in: http://localhost:${PORT}/signin.html      `);
-  console.log(` API:     http://localhost:${PORT}/api/health       `);
-  console.log(` Database: ${DB_FILE}                              `);
-  console.log(`====================================================`);
-});
+// Create HTTP server
+const server = http.createServer(handleRequest);
+
+// Export handler for Vercel Serverless Function & testing
+module.exports = handleRequest;
+module.exports.server = server;
+
+// Start the server if executed directly via `node server.js`
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(` AuraCloud AZ-900 Study Suite Server Online!        `);
+    console.log(` Port:    http://localhost:${PORT}                  `);
+    console.log(` Sign-in: http://localhost:${PORT}/signin.html      `);
+    console.log(` API:     http://localhost:${PORT}/api/health       `);
+    console.log(` Database: ${DB_FILE}                              `);
+    console.log(`====================================================`);
+  });
+}
+

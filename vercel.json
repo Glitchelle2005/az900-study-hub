@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/signin", "destination": "/signin.html" },
+    { "source": "/login", "destination": "/signin.html" },
+    { "source": "/api/(.*)", "destination": "/api/index.js" }
+  ]
+}
