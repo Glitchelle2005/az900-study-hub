@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - AuraCloud AZ-900 Study Suite</title>
+  <meta name="description" content="Sign in to your candidate portal to master Azure AZ-900 concepts, practice smart quizzes, and track readiness.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .svg-cloud-nodes {
+      width: 100%;
+      height: 140px;
+      margin: 1.25rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-page-container">
+    <div class="auth-card-wrapper">
+      
+      <!-- LEFT SHOWCASE PANEL (Matching media_1792774473335.png) -->
+      <div class="auth-showcase-panel">
+        <div>
+          <!-- Brand Squircle Pill -->
+          <div class="showcase-brand-pill">
+            <div class="brand-icon-squircle" style="width: 28px; height: 28px; font-size: 0.9rem; border-radius: 8px;">A</div>
+            <span style="font-weight: 800; font-size: 1.1rem; color: var(--text-primary); letter-spacing: -0.02em;">AuraCloud</span>
+          </div>
+
+          <h1 class="showcase-headline">
+            One system for your whole cloud journey.<br>
+            <span style="background: linear-gradient(135deg, #6366f1, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+              Fundamentals to certified.
+            </span>
+          </h1>
+          <p class="showcase-subtext">
+            Sign in to your candidate portal to master concepts, practice quizzes, drill Leitner flashcards, and track your passing readiness in one place.
+          </p>
+
+          <!-- Cloud Nodes & Network Architecture Vector Graphic -->
+          <div class="svg-cloud-nodes">
+            <svg viewBox="0 0 400 130" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <path d="M60 90 L180 50 L320 85" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+              <path d="M180 50 L200 110" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+              <!-- Node 1: Left Datacenter -->
+              <rect x="30" y="70" width="60" height="40" rx="8" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+              <circle cx="45" cy="85" r="4" fill="#6366f1"/>
+              <rect x="55" y="82" width="25" height="6" rx="3" fill="#e0e7ff"/>
+              <rect x="42" y="96" width="38" height="5" rx="2.5" fill="#f1f5f9"/>
+              <!-- Node 2: Central Cloud Server -->
+              <rect x="150" y="25" width="65" height="50" rx="10" fill="#6366f1" filter="drop-shadow(0 4px 10px rgba(99,102,241,0.3))"/>
+              <circle cx="182" cy="45" r="10" fill="#ffffff" opacity="0.2"/>
+              <path d="M176 46 C176 43 179 40 182 40 C185 40 188 43 188 46 C190 46 192 48 192 50 C192 52 190 54 188 54 L176 54 C173 54 171 52 171 50 C171 48 173 46 176 46 Z" fill="#ffffff"/>
+              <circle cx="165" cy="63" r="3" fill="#a5b4fc"/>
+              <circle cx="175" cy="63" r="3" fill="#a5b4fc"/>
+              <circle cx="185" cy="63" r="3" fill="#a5b4fc"/>
+              <!-- Node 3: Right Database Vault -->
+              <rect x="290" y="65" width="60" height="45" rx="8" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+              <ellipse cx="320" cy="78" rx="18" ry="5" fill="#818cf8"/>
+              <path d="M302 78 C302 85 338 85 338 78 V88 C338 95 302 95 302 88 Z" fill="#c7d2fe"/>
+              <path d="M302 88 C302 95 338 95 338 88 V98 C338 105 302 105 302 98 Z" fill="#e0e7ff"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2x2 Feature Pills Grid (media_1792774473335.png) -->
+        <div class="showcase-grid-pills">
+          <div class="showcase-pill-card">
+            <div class="showcase-pill-title">Role-based access</div>
+            <div class="showcase-pill-desc">Personalized study metrics for candidates, instructors and reviewers.</div>
+          </div>
+          <div class="showcase-pill-card">
+            <div class="showcase-pill-title">AZ-900 Curriculum</div>
+            <div class="showcase-pill-desc">Cloud Concepts, Architecture & Governance side by side.</div>
+          </div>
+          <div class="showcase-pill-card">
+            <div class="showcase-pill-title">REST API & Database</div>
+            <div class="showcase-pill-desc">Score attempts and readiness synced directly to persistent storage.</div>
+          </div>
+          <div class="showcase-pill-card">
+            <div class="showcase-pill-title">AI Study Coach</div>
+            <div class="showcase-pill-desc">Why-wrong feedback and real-world African analogies.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIGN-IN FORM PANEL -->
+      <div class="auth-form-panel">
+        
+        <div class="auth-form-header">
+          <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+            <div class="brand-icon-squircle" style="width: 32px; height: 32px; font-size: 1rem; border-radius: 9px;">A</div>
+            <span style="font-weight: 800; font-size: 1.15rem; color: var(--text-primary);">AuraCloud</span>
+          </div>
+          <h2 id="authFormTitle" class="auth-title">Sign in</h2>
+          <p id="authFormSubtitle" style="font-size: 0.85rem; color: var(--text-secondary);">Enter your candidate credentials to access your dashboard.</p>
+        </div>
+
+        <!-- Auth Tabs: Sign In / Create Account -->
+        <div class="auth-tabs">
+          <button id="tabSignIn" class="auth-tab-btn active" type="button" onclick="switchAuthTab('signin')">Sign in</button>
+          <button id="tabRegister" class="auth-tab-btn" type="button" onclick="switchAuthTab('register')">Create Account</button>
+        </div>
+
+        <!-- Feedback Alert Banner -->
+        <div id="authAlert" style="display: none; padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: 1.25rem;"></div>
+
+        <!-- Form Elements -->
+        <form id="authForm" onsubmit="handleAuthSubmit(event)">
+          
+          <!-- Name field (shown only during registration) -->
+          <div id="nameFieldGroup" class="form-group" style="display: none;">
+            <label class="form-label" for="authName">Full Name</label>
+            <input type="text" id="authName" class="form-input" placeholder="e.g. Alex Mwangi">
+            <div id="nameError" class="form-feedback-error">Please enter your full name.</div>
+          </div>
+
+          <!-- Email field -->
+          <div class="form-group">
+            <label class="form-label" for="authEmail">Email</label>
+            <input type="email" id="authEmail" class="form-input" placeholder="alex.m@cloudstudy.africa" required>
+            <div id="emailError" class="form-feedback-error">Enter your email address.</div>
+          </div>
+
+          <!-- Password field with toggle -->
+          <div class="form-group">
+            <label class="form-label" for="authPassword">Password</label>
+            <div style="position: relative;">
+              <input type="password" id="authPassword" class="form-input" placeholder="••••••••" style="padding-right: 2.75rem;" required>
+              <button type="button" onclick="togglePasswordVisibility()" style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem;">
+                <span id="pwdEyeIcon">👁️</span>
+              </button>
+            </div>
+            <div id="passwordError" class="form-feedback-error">Enter your password.</div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.825rem;">
+            <label style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); cursor: pointer;">
+              <input type="checkbox" id="rememberMe" checked style="accent-color: var(--primary);">
+              Remember me
+            </label>
+            <a href="javascript:void(0)" onclick="handleForgotPassword()" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+              Forgot your password?
+            </a>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn-primary-solid">
+            Sign in
+          </button>
+        </form>
+
+        <!-- Examiner Quick Demo Access Box -->
+        <div class="auth-quick-demo">
+          <div class="quick-demo-title">⚡ Quick 1-Click Examiner Demo Login</div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem;">
+            <button type="button" class="quick-demo-btn" onclick="fillQuickLogin('alex.m@cloudstudy.africa', 'password123', 'Alex Mwangi', 'AZ-900 Candidate')">
+              👤 Alex Mwangi (Candidate)
+            </button>
+            <button type="button" class="quick-demo-btn" onclick="fillQuickLogin('sarah.k@cloudstudy.africa', 'password123', 'Sarah Kimani', 'Cloud Instructor')">
+              👩‍🏫 Sarah K. (Instructor)
+            </button>
+          </div>
+        </div>
+
+        <!-- Security Warning Notice (Screenshot 2) -->
+        <div class="auth-legal-footer">
+          Unauthorised access is monitored and logged.<br>
+          <span style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.4rem; display: inline-block;">
+            Unofficial study tool. Not affiliated with Microsoft.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Client-side Authentication Script -->
+  <script>
+    let currentMode = 'signin'; // 'signin' or 'register'
+
+    function switchAuthTab(mode) {
+      currentMode = mode;
+      const tabSignIn = document.getElementById('tabSignIn');
+      const tabRegister = document.getElementById('tabRegister');
+      const nameGroup = document.getElementById('nameFieldGroup');
+      const title = document.getElementById('authFormTitle');
+      const subtitle = document.getElementById('authFormSubtitle');
+      const submitBtn = document.getElementById('submitBtn');
+      const alertBox = document.getElementById('authAlert');
+      
+      alertBox.style.display = 'none';
+
+      if (mode === 'signin') {
+        tabSignIn.classList.add('active');
+        tabRegister.classList.remove('active');
+        nameGroup.style.display = 'none';
+        title.textContent = 'Sign in';
+        subtitle.textContent = 'Enter your candidate credentials to access your dashboard.';
+        submitBtn.textContent = 'Sign in';
+      } else {
+        tabRegister.classList.add('active');
+        tabSignIn.classList.remove('active');
+        nameGroup.style.display = 'block';
+        title.textContent = 'Create Candidate Account';
+        subtitle.textContent = 'Join AuraCloud to track your AZ-900 readiness and study streaks.';
+        submitBtn.textContent = 'Create Account';
+      }
+    }
+
+    function togglePasswordVisibility() {
+      const pwd = document.getElementById('authPassword');
+      const icon = document.getElementById('pwdEyeIcon');
+      if (pwd.type === 'password') {
+        pwd.type = 'text';
+        icon.textContent = '🙈';
+      } else {
+        pwd.type = 'password';
+        icon.textContent = '👁️';
+      }
+    }
+
+    function fillQuickLogin(email, password, name, role) {
+      document.getElementById('authEmail').value = email;
+      document.getElementById('authPassword').value = password;
+      if (currentMode === 'register') {
+        document.getElementById('authName').value = name;
+      }
+      showAlert(`Loaded credentials for ${name}. Click 'Sign in' below to enter!`, 'info');
+    }
+
+    function showAlert(message, type) {
+      const alertBox = document.getElementById('authAlert');
+      alertBox.style.display = 'block';
+      if (type === 'error') {
+        alertBox.style.backgroundColor = 'var(--error-bg)';
+        alertBox.style.color = 'var(--error)';
+        alertBox.style.border = '1px solid var(--error)';
+      } else if (type === 'success') {
+        alertBox.style.backgroundColor = 'var(--success-bg)';
+        alertBox.style.color = 'var(--success)';
+        alertBox.style.border = '1px solid var(--success)';
+      } else {
+        alertBox.style.backgroundColor = 'var(--primary-light)';
+        alertBox.style.color = 'var(--primary)';
+        alertBox.style.border = '1px solid var(--primary)';
+      }
+      alertBox.textContent = message;
+    }
+
+    function handleForgotPassword() {
+      const email = document.getElementById('authEmail').value.trim();
+      if (!email) {
+        showAlert('Please enter your email address in the field above first.', 'error');
+        return;
+      }
+      showAlert(`Password reset instructions simulated for ${email}. (Demo Password is: password123)`, 'info');
+    }
+
+    async function handleAuthSubmit(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value.trim();
+      const name = document.getElementById('authName') ? document.getElementById('authName').value.trim() : '';
+
+      // Validation
+      if (!email) {
+        document.getElementById('emailError').classList.add('visible');
+        return;
+      } else {
+        document.getElementById('emailError').classList.remove('visible');
+      }
+
+      if (!password) {
+        document.getElementById('passwordError').classList.add('visible');
+        return;
+      } else {
+        document.getElementById('passwordError').classList.remove('visible');
+      }
+
+      if (currentMode === 'register' && !name) {
+        document.getElementById('nameError').classList.add('visible');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Authenticating...';
+
+      // 1. Try real backend server REST API
+      try {
+        const endpoint = currentMode === 'signin' ? '/api/auth/login' : '/api/auth/register';
+        const payload = currentMode === 'signin' 
+          ? { email, password }
+          : { name, email, password, role: 'AZ-900 Candidate' };
+
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          showAlert(data.message || 'Authenticated successfully! Redirecting...', 'success');
+          // Save session
+          localStorage.setItem('auracloud_user', JSON.stringify(data.user));
+          localStorage.setItem('auracloud_token', data.token);
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 600);
+          return;
+        } else {
+          // If server returned an error (e.g. invalid credentials)
+          showAlert(data.message || 'Authentication failed. Please check credentials.', 'error');
+          submitBtn.disabled = false;
+          submitBtn.textContent = currentMode === 'signin' ? 'Sign in' : 'Create Account';
+          return;
+        }
+      } catch (networkErr) {
+        // 2. Offline / Direct File Fallback Mode
+        console.warn('Backend server not reachable, executing offline client-side authentication:', networkErr.message);
+        
+        // Mock offline fallback
+        const initials = name ? name.split(' ').map(n=>n[0]).join('').substring(0,2).toUpperCase() : (email.includes('alex') ? 'AM' : 'AZ');
+        const fallbackUser = {
+          id: 'usr_offline_' + Date.now(),
+          name: name || (email.includes('alex') ? 'Alex Mwangi' : (email.includes('sarah') ? 'Sarah Kimani' : 'Candidate')),
+          email: email,
+          role: email.includes('sarah') ? 'Cloud Instructor' : 'AZ-900 Candidate',
+          avatarInitials: initials,
+          examDate: '2026-11-20',
+          hoursPerDay: 2
+        };
+
+        showAlert('Authenticated in offline demonstration mode! Redirecting...', 'success');
+        localStorage.setItem('auracloud_user', JSON.stringify(fallbackUser));
+        localStorage.setItem('auracloud_token', 'offline_token_' + Date.now());
+
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 600);
+      }
+    }
+
+    // Auto-check if already logged in
+    window.addEventListener('DOMContentLoaded', () => {
+      const existingUser = localStorage.getItem('auracloud_user');
+      if (existingUser) {
+        try {
+          const user = JSON.parse(existingUser);
+          if (user && user.email) {
+            showAlert(`Currently logged in as ${user.name || user.email}. Redirecting to dashboard...`, 'info');
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 800);
+          }
+        } catch(e) {}
+      }
+    });
+  </script>
+</body>
+</html>

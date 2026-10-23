@@ -1,0 +1,22 @@
+{
+  "name": "auracloud-az900-study-suite",
+  "version": "1.0.0",
+  "description": "Full-Stack AZ-900 Study Hub with Node.js Server, JSON Database, Dedicated Sign-In Portal, Custom CSS, and Interactive Search",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "az900",
+    "azure",
+    "cloud-concepts",
+    "exam-prep",
+    "study-portal",
+    "fullstack",
+    "nodejs",
+    "rest-api"
+  ],
+  "author": "Cloud Candidate",
+  "license": "ISC"
+}

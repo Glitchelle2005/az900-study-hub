@@ -1,0 +1,648 @@
+{
+  "users": [
+    {
+      "id": "usr_001",
+      "name": "Alex Mwangi",
+      "email": "alex.m@cloudstudy.africa",
+      "password": "password123",
+      "role": "AZ-900 Candidate",
+      "avatarInitials": "AM",
+      "examDate": "2026-11-20",
+      "hoursPerDay": 2,
+      "streakDays": 4,
+      "createdAt": "2026-10-01T08:00:00Z"
+    },
+    {
+      "id": "usr_002",
+      "name": "Sarah Kimani",
+      "email": "sarah.k@cloudstudy.africa",
+      "password": "password123",
+      "role": "Cloud Instructor",
+      "avatarInitials": "SK",
+      "examDate": "2026-12-15",
+      "hoursPerDay": 3,
+      "streakDays": 12,
+      "createdAt": "2026-10-05T09:30:00Z"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "c1",
+      "domain": "Cloud Concepts",
+      "title": "Shared Responsibility Model",
+      "summary": "Defines what security tasks are handled by the cloud provider (Microsoft) vs. what tasks are retained by the customer across IaaS, PaaS, and SaaS.",
+      "deepDive": [
+        "In on-premises: Customer manages 100% of the stack (physical datacenter, hypervisor, OS, network, apps, data).",
+        "In IaaS (Infrastructure as a Service): Cloud provider handles physical security, power, and hardware virtualization. Customer configures and patches OS, network controls, runtime, applications, and protects data.",
+        "In PaaS (Platform as a Service): Cloud provider also manages OS patching, hardware, network infrastructure, and database runtime engine. Customer is responsible only for their applications and data.",
+        "In SaaS (Software as a Service): Cloud provider manages everything except customer data, identities/credentials, and access rights management.",
+        "Exam Rule: The customer ALWAYS retains responsibility for their data, identity governance, accounts, and endpoint devices, regardless of cloud model."
+      ],
+      "examTip": "Whenever an exam question mentions patching the guest OS, that is ALWAYS the customer's duty in IaaS, but Microsoft's duty in PaaS/SaaS.",
+      "analogy": "Like renting a house: In on-premises you build and own the house; in IaaS you rent an unfurnished apartment (landlord fixes the roof, you furnish and lock your doors); in SaaS you book a fully serviced hotel suite.",
+      "keywords": [
+        "shared responsibility",
+        "iaas",
+        "paas",
+        "saas",
+        "on-premise",
+        "security",
+        "customer responsibility",
+        "patching"
+      ]
+    },
+    {
+      "id": "c2",
+      "domain": "Cloud Concepts",
+      "title": "CapEx vs. OpEx Financial Models",
+      "summary": "Capital Expenditure involves upfront spending on physical hardware and facilities, while Operational Expenditure involves ongoing operational costs with pay-as-you-go flexibility.",
+      "deepDive": [
+        "CapEx: Requires substantial upfront capital investments in physical servers, storage arrays, cooling, and real estate.",
+        "CapEx value depreciates over accounting life (typically 3-5 years) with fixed capacity limits.",
+        "OpEx: Pay-as-you-go pricing model where costs scale directly with actual resource consumption.",
+        "OpEx offers agility: businesses can spin up 100 VMs for 3 hours to process analytics and shut them down immediately without idle hardware costs."
+      ],
+      "examTip": "Azure operates primarily on an OpEx model. Look for keywords like 'no upfront cost', 'pay for what you use', and 'immediate tax deduction as operational cost'.",
+      "analogy": "CapEx is like purchasing a commercial lorry with loans and maintenance costs; OpEx is hiring a courier van or ride-share only for the exact delivery trip.",
+      "keywords": [
+        "capex",
+        "opex",
+        "financial",
+        "pricing",
+        "consumption",
+        "upfront cost",
+        "pay as you go",
+        "billing"
+      ]
+    },
+    {
+      "id": "c3",
+      "domain": "Cloud Concepts",
+      "title": "Cloud Deployment Models: Public, Private, Hybrid & Multi-Cloud",
+      "summary": "The four deployment architectures defining where infrastructure resides, who owns it, and how resources are shared or isolated.",
+      "deepDive": [
+        "Public Cloud: Owned and operated by a third-party cloud provider (Microsoft Azure). Resources are delivered over the public internet to multiple tenants with zero hardware maintenance.",
+        "Private Cloud: Computing infrastructure used exclusively by a single business or organization. Can be hosted in an on-premises datacenter or dedicated off-site facility. Customer has total control but full CapEx costs.",
+        "Hybrid Cloud: Combines public cloud with private cloud or on-premises infrastructure, allowing data and apps to be shared between them (e.g., Azure Arc, Azure Stack).",
+        "Multi-Cloud: Using multiple public cloud providers simultaneously (e.g., Azure and AWS) to avoid vendor lock-in or meet specific compliance needs."
+      ],
+      "examTip": "Hybrid Cloud is the only answer when an organization wants to keep sensitive legacy databases on-premises due to legal compliance while running web applications in Azure.",
+      "analogy": "Public cloud is public transit (bus/train); Private cloud is owning a personal car; Hybrid cloud is keeping a personal bicycle for village errands and taking the high-speed train for intercity travel.",
+      "keywords": [
+        "public cloud",
+        "private cloud",
+        "hybrid cloud",
+        "multi-cloud",
+        "azure arc",
+        "azure stack",
+        "deployment models"
+      ]
+    },
+    {
+      "id": "c4",
+      "domain": "Cloud Concepts",
+      "title": "Cloud Benefits: High Availability, Scalability, Elasticity & Agility",
+      "summary": "The fundamental architectural advantages that cloud computing provides over traditional on-premises datacenters.",
+      "deepDive": [
+        "High Availability (HA): Ensuring systems remain operational and accessible with minimal downtime, supported by Microsoft Service Level Agreements (SLAs).",
+        "Scalability: The ability of a system to handle increased workload. Vertical scaling (scale up) adds CPU/RAM to a VM; Horizontal scaling (scale out) adds more VM instances.",
+        "Elasticity: The ability to automatically add resources during demand surges and automatically deallocate them when traffic drops (Autoscaling), saving costs.",
+        "Agility: The speed at which IT teams can provision new environments, test new features, and deploy services globally in minutes rather than months.",
+        "Fault Tolerance: The ability of a system to continue operating without interruption even when individual hardware components fail."
+      ],
+      "examTip": "Scalability is about capacity ceiling; Elasticity is about dynamic automatic scaling up AND down in response to real-time spikes.",
+      "analogy": "Elasticity is like an elastic waistband that expands during a heavy feast and contracts back to normal size right after digestion.",
+      "keywords": [
+        "high availability",
+        "scalability",
+        "elasticity",
+        "agility",
+        "fault tolerance",
+        "disaster recovery",
+        "sla",
+        "scale up",
+        "scale out"
+      ]
+    },
+    {
+      "id": "c5",
+      "domain": "Azure Architecture & Services",
+      "title": "Azure Regions, Geographies & Availability Zones",
+      "summary": "The global physical footprint of Azure data infrastructure structured into Geographies, Regions, Region Pairs, and Availability Zones.",
+      "deepDive": [
+        "Geography: A discrete market (typically containing two or more regions) that preserves data residency and compliance boundaries (e.g., South Africa).",
+        "Region: A geographical area containing one or more datacenters networked through a low-latency, dedicated fiber network (e.g., South Africa North in Johannesburg).",
+        "Availability Zones (AZs): Physically separate datacenters within an Azure region. Each zone has its own independent power, cooling, and networking.",
+        "A region with AZ support contains at least 3 distinct availability zones.",
+        "Region Pairs: Each Azure region is paired with another region in the same geography at least 300 miles apart to protect against regional disasters. Planned updates roll out to paired regions sequentially."
+      ],
+      "examTip": "Availability Zones protect against datacenter-level failures. Region Pairs protect against large-scale regional catastrophic events (e.g., widespread natural disasters).",
+      "analogy": "Availability Zones are three separate bank branches across Nairobi with separate generators; Region Pairs are having duplicate vaults in Nairobi and Mombasa.",
+      "keywords": [
+        "regions",
+        "geographies",
+        "availability zones",
+        "region pairs",
+        "datacenter",
+        "latency",
+        "residency",
+        "south africa north"
+      ]
+    },
+    {
+      "id": "c6",
+      "domain": "Azure Architecture & Services",
+      "title": "Azure Resource Hierarchy: Management Groups, Subscriptions & Resource Groups",
+      "summary": "The 4-level organizational hierarchy in Azure: Management Groups > Subscriptions > Resource Groups > Resources.",
+      "deepDive": [
+        "Level 1 - Management Groups: Containers for managing access, policies, and compliance across multiple subscriptions. Can be nested up to 6 levels deep.",
+        "Level 2 - Subscriptions: Logical units of Azure services linked to an Azure account. Acts as both an administrative boundary (access control) and a billing boundary (invoices generated per subscription).",
+        "Level 3 - Resource Groups: Logical containers where related Azure resources (VMs, storage, virtual networks) are deployed, monitored, and managed as a single unit.",
+        "A resource can exist in only ONE resource group at a time. If a resource group is deleted, ALL resources inside it are deleted.",
+        "Level 4 - Resources: Individual instances of services like Virtual Machines, Storage Accounts, or SQL Databases."
+      ],
+      "examTip": "Subscriptions are both a billing boundary and an access boundary. Resource groups do NOT nest inside other resource groups.",
+      "analogy": "Think of a school: Management Group is the District Ministry, Subscription is the School Campus account, Resource Group is a classroom, and Resources are the desks and computers inside that classroom.",
+      "keywords": [
+        "management groups",
+        "subscriptions",
+        "resource groups",
+        "hierarchy",
+        "billing boundary",
+        "resource locks",
+        "governance"
+      ]
+    },
+    {
+      "id": "c7",
+      "domain": "Azure Architecture & Services",
+      "title": "Azure Compute: Virtual Machines, Scale Sets, App Services & Functions",
+      "summary": "Core on-demand computing services ranging from unmanaged IaaS virtual machines to fully managed PaaS web apps and event-driven serverless functions.",
+      "deepDive": [
+        "Azure Virtual Machines (VMs): IaaS service providing total control over operating system, software stack, and configurations. Customer manages OS patching.",
+        "Virtual Machine Scale Sets (VMSS): Automatically deploys and balances an identical set of load-balanced VMs based on demand.",
+        "Azure App Service: PaaS offering for building, hosting, and scaling web apps and REST APIs in .NET, Java, Node.js, Python, or PHP without managing underlying servers.",
+        "Azure Functions: Serverless event-driven compute service that executes code in response to triggers (HTTP requests, database changes, timers) and charges strictly per millisecond of execution.",
+        "Azure Container Instances (ACI): Fastest way to run isolated Docker containers in Azure without managing any VM infrastructure.",
+        "Azure Kubernetes Service (AKS): Enterprise-grade managed container orchestration platform for deploying and scaling microservices clusters."
+      ],
+      "examTip": "When a question says 'serverless' and 'event-driven' with 'no charge when idle', the answer is Azure Functions. When it asks for 'PaaS web hosting without managing VMs', it is Azure App Service.",
+      "analogy": "Virtual Machines are like hiring a full-time mechanic (IaaS); Azure Functions is like dialing an on-demand taxi ride only when you need to go somewhere (Serverless).",
+      "keywords": [
+        "virtual machines",
+        "vmss",
+        "app service",
+        "functions",
+        "serverless",
+        "aci",
+        "aks",
+        "containers",
+        "compute"
+      ]
+    },
+    {
+      "id": "c8",
+      "domain": "Azure Architecture & Services",
+      "title": "Azure Virtual Network (VNet), Subnets & Network Security Groups (NSGs)",
+      "summary": "The fundamental building block for private networking in Azure, enabling secure communication between Azure resources, the internet, and on-premises networks.",
+      "deepDive": [
+        "Azure VNet: A representation of your own network in the cloud, isolated from other tenants.",
+        "Subnets: Allow you to segment the VNet into one or more sub-networks for security and organization (e.g., WebSubnet, DatabaseSubnet).",
+        "Network Security Groups (NSGs): Virtual firewalls that filter network traffic to and from Azure resources using 5-tuple security rules (Source, Source Port, Destination, Destination Port, Protocol).",
+        "Azure Bastion: Fully managed PaaS service that provides secure, seamless RDP/SSH access to VMs directly through the Azure portal via TLS, without exposing public IP addresses on the VMs.",
+        "Azure VPN Gateway: Encrypted connection over the public internet connecting an on-premises network to an Azure VNet.",
+        "Azure ExpressRoute: Dedicated, private, high-speed fiber connection from on-premises to Microsoft cloud that DOES NOT traverse the public internet."
+      ],
+      "examTip": "ExpressRoute provides highest speed and security because it bypasses the public internet completely. Azure Bastion eliminates the need for public IPs on VMs for RDP/SSH.",
+      "analogy": "A VNet is a gated university campus; Subnets are individual faculty buildings; NSGs are security guards at each building entrance checking student IDs; ExpressRoute is a dedicated private underground tunnel directly from headquarters.",
+      "keywords": [
+        "vnet",
+        "subnets",
+        "nsg",
+        "bastion",
+        "vpn gateway",
+        "expressroute",
+        "networking",
+        "rdp",
+        "ssh",
+        "security rules"
+      ]
+    },
+    {
+      "id": "c9",
+      "domain": "Azure Architecture & Services",
+      "title": "Azure Storage Services: Blob, Files, Disks & Access Tiers",
+      "summary": "Massively scalable cloud storage for unstructured data, file shares, and VM disks, paired with cost-optimized lifecycle access tiers.",
+      "deepDive": [
+        "Azure Blob Storage: Object storage optimized for massive amounts of unstructured data (images, videos, backups, logs).",
+        "Azure Files: Fully managed SMB/NFS cloud file shares that can be mounted simultaneously by cloud or on-premises Windows, Linux, and macOS systems.",
+        "Azure Disk Storage: Block-level storage volumes attached to Azure Virtual Machines (OS disks and Data disks).",
+        "Storage Access Tiers: Hot (frequently accessed data, highest storage cost, lowest access cost); Cool (infrequently accessed, stored for at least 30 days); Cold (rarely accessed, stored for at least 90 days); Archive (rarely accessed, lowest storage cost, highest retrieval latency up to several hours).",
+        "Redundancy Options: LRS (Locally Redundant - 3 copies in 1 datacenter), ZRS (Zone-Redundant - 3 copies across 3 availability zones in the same region), GRS (Geo-Redundant - 3 copies in primary region + 3 copies in paired region)."
+      ],
+      "examTip": "Archive tier is the cheapest for long-term backups, but files are offline and require hours to rehydrate before you can read them.",
+      "analogy": "Hot tier is your kitchen counter (grab snacks immediately); Cool tier is your pantry cupboard; Archive tier is an off-site warehouse where you must request items in advance.",
+      "keywords": [
+        "blob storage",
+        "azure files",
+        "disk storage",
+        "access tiers",
+        "hot",
+        "cool",
+        "cold",
+        "archive",
+        "lrs",
+        "zrs",
+        "grs",
+        "redundancy"
+      ]
+    },
+    {
+      "id": "c10",
+      "domain": "Azure Architecture & Services",
+      "title": "Azure Databases: Azure SQL, Cosmos DB & Database for MySQL/PostgreSQL",
+      "summary": "Fully managed relational and NoSQL database services with automatic patching, backups, high availability, and global distribution.",
+      "deepDive": [
+        "Azure SQL Database: Fully managed relational Database-as-a-Service (PaaS) based on the latest stable Microsoft SQL Server engine with built-in high availability and AI performance tuning.",
+        "Azure Cosmos DB: Globally distributed, multi-model NoSQL database service offering single-digit millisecond response times at any scale with 99.999% SLA.",
+        "Supports APIs for MongoDB, Cassandra, Gremlin, Table, and SQL (Core).",
+        "Azure Database for MySQL & PostgreSQL: Fully managed open-source relational databases in Azure.",
+        "Azure Synapse Analytics: Enterprise analytics service that accelerates time to insight across data warehouses and big data systems."
+      ],
+      "examTip": "If an exam question requires single-digit millisecond latency and turnkey global replication for NoSQL data, the answer is ALWAYS Azure Cosmos DB.",
+      "analogy": "Azure SQL is an organized structured library catalog; Cosmos DB is an ultra-fast global courier dispatch network that can handle any package shape instantly in 50 countries.",
+      "keywords": [
+        "azure sql",
+        "cosmos db",
+        "nosql",
+        "relational",
+        "mysql",
+        "postgresql",
+        "synapse analytics",
+        "database"
+      ]
+    },
+    {
+      "id": "c11",
+      "domain": "Azure Management & Governance",
+      "title": "Microsoft Entra ID (formerly Azure AD) & Identity Management",
+      "summary": "Cloud-based identity and access management service providing single sign-on, authentication, and authorization for cloud and hybrid applications.",
+      "deepDive": [
+        "Entra ID vs. Active Directory Domain Services (AD DS): Entra ID is a multi-tenant cloud identity service using REST APIs and modern protocols (SAML, OAuth 2.0, OpenID Connect), whereas traditional AD DS uses LDAP and Kerberos.",
+        "Single Sign-On (SSO): Users log in once and gain access to Microsoft 365, Azure Portal, and thousands of SaaS applications.",
+        "Multi-Factor Authentication (MFA): Requires two or more verification factors: something you know (password), something you have (phone/authenticator app), or something you are (biometrics/fingerprint).",
+        "Conditional Access: If-then policy engine (e.g., If user is signing in from outside country OR from an unmanaged device, Then require MFA or block access).",
+        "Role-Based Access Control (RBAC): Grants fine-grained permissions to security principals (users, groups, service principals) on Azure resources based on roles (Owner, Contributor, Reader)."
+      ],
+      "examTip": "Authentication confirms WHO you are (identity verification); Authorization determines WHAT you have permission to do (RBAC permissions).",
+      "analogy": "Authentication is showing your national ID passport at airport immigration; Authorization is your boarding pass ticket that decides whether you sit in First Class or Economy.",
+      "keywords": [
+        "entra id",
+        "azure ad",
+        "identity",
+        "authentication",
+        "authorization",
+        "mfa",
+        "conditional access",
+        "rbac",
+        "sso"
+      ]
+    },
+    {
+      "id": "c12",
+      "domain": "Azure Management & Governance",
+      "title": "Azure Governance: Azure Policy, Resource Locks & Tags",
+      "summary": "Tools to enforce corporate organizational standards, prevent accidental resource deletion, and track cloud expenditures across departments.",
+      "deepDive": [
+        "Azure Policy: Evaluates resources and enforces rules to ensure compliance with corporate standards and service level agreements (e.g., Allow only VMs of size D-series, Restrict deployment to South Africa North region, Enforce tags).",
+        "Initiatives (Policy Sets): Collections of multiple policy definitions grouped together to achieve a single overarching compliance goal (e.g., ISO 27001 or PCI-DSS).",
+        "Resource Locks: Prevent accidental deletion or modification of critical Azure resources.",
+        "CanNotDelete Lock: Authorized users can read and modify a resource, but CANNOT delete it.",
+        "ReadOnly Lock: Authorized users can read a resource, but CANNOT delete or modify it.",
+        "Resource Tags: Key-value metadata pairs added to resources to organize billing, cost allocation, environment management, and ownership tracking."
+      ],
+      "examTip": "Resource locks take precedence over RBAC permissions! Even a Subscription Owner cannot delete a resource that has a CanNotDelete lock until the lock is removed.",
+      "analogy": "Azure Policy is the municipal building code (inspectors reject unapproved floor plans); Resource Locks are the child-safety lock on car windows that prevents passengers from falling out.",
+      "keywords": [
+        "azure policy",
+        "initiatives",
+        "resource locks",
+        "cannotdelete",
+        "readonly",
+        "tags",
+        "governance",
+        "compliance"
+      ]
+    },
+    {
+      "id": "c13",
+      "domain": "Azure Management & Governance",
+      "title": "Cost Management: Azure Budgets, Pricing Calculator & TCO",
+      "summary": "Tools to estimate costs, analyze cloud expenditure, configure automated budget alerts, and compare on-premises datacenter costs against Azure.",
+      "deepDive": [
+        "Pricing Calculator: Pre-deployment tool used to estimate anticipated monthly costs for new Azure solutions based on configuration and usage assumptions.",
+        "Total Cost of Ownership (TCO) Calculator: Tool used to compare the comprehensive cost of running existing on-premises datacenter workloads against running them in Azure over a 5-year period.",
+        "TCO factors in server hardware, electricity, cooling, datacenter real estate, network bandwidth, storage arrays, and IT labor overhead.",
+        "Microsoft Cost Management: Post-deployment service to monitor historical spending, analyze trends, and set spending limits.",
+        "Azure Budgets: Configurable financial thresholds that trigger automated email notifications or action groups when spending reaches 80% or 100% of budgeted amounts."
+      ],
+      "examTip": "Use TCO Calculator to justify migrating existing on-premises servers to Azure before the migration; use Pricing Calculator to estimate the specific bill for cloud resources.",
+      "analogy": "Pricing Calculator is reading the grocery store menu before dining; TCO Calculator is calculating how much cheaper eating at home vs. running a private kitchen for 5 years would be.",
+      "keywords": [
+        "cost management",
+        "budgets",
+        "pricing calculator",
+        "tco",
+        "total cost of ownership",
+        "billing",
+        "spending alerts"
+      ]
+    },
+    {
+      "id": "c14",
+      "domain": "Azure Management & Governance",
+      "title": "Azure Monitoring: Azure Monitor, Log Analytics & Azure Advisor",
+      "summary": "Full-stack observability tools to collect telemetries, analyze logs, generate real-time alerts, and obtain actionable best-practice recommendations.",
+      "deepDive": [
+        "Azure Monitor: Comprehensive solution for collecting, analyzing, and acting on telemetry from cloud and on-premises environments (Metrics and Logs).",
+        "Log Analytics: Tool in the Azure portal used to query and analyze log data using Kusto Query Language (KQL).",
+        "Application Insights: Feature of Azure Monitor that monitors live web applications, detecting performance anomalies and diagnosing bottlenecks.",
+        "Azure Service Health: Personalized dashboard keeping you informed about the health of Azure services and regions you use, planned maintenance, and incident root cause analyses.",
+        "Azure Advisor: Personalized cloud consultant analyzing your resource configurations to provide recommendations across 5 pillars: Cost, Security, Reliability, Performance, and Operational Excellence."
+      ],
+      "examTip": "Azure Service Health tells you when MICROSOFT has an outage affecting your services; Azure Monitor tells you how YOUR own apps and resources are performing.",
+      "analogy": "Azure Monitor is your vehicle dashboard showing engine RPM, speed, and fuel; Azure Advisor is a certified master mechanic sitting beside you giving tips on how to save fuel and drive safer.",
+      "keywords": [
+        "azure monitor",
+        "log analytics",
+        "kql",
+        "application insights",
+        "service health",
+        "azure advisor",
+        "alerts",
+        "telemetry"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "Cloud Concepts",
+      "question": "An organization wants to migrate its on-premises infrastructure to Azure. Under the Shared Responsibility Model, which responsibility is ALWAYS retained by the customer regardless of whether they choose IaaS, PaaS, or SaaS?",
+      "options": [
+        "Operating system security patching",
+        "Physical datacenter security and cooling",
+        "Data classification, accounts, and identity management",
+        "Hardware virtualization and host server maintenance"
+      ],
+      "correctIndex": 2,
+      "explanation": "In all cloud deployment types (IaaS, PaaS, SaaS, and on-premises), the customer ALWAYS maintains ownership and accountability for their data, endpoint devices, accounts, and identity governance.",
+      "whyWrong": [
+        "OS patching is managed by the cloud provider in PaaS and SaaS solutions.",
+        "Physical datacenter infrastructure and security are always managed entirely by Microsoft in the cloud.",
+        "Correct answer.",
+        "Hardware virtualization is handled by Microsoft's hypervisors in all cloud services."
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": "q2",
+      "domain": "Cloud Concepts",
+      "question": "A startup plans to launch a seasonal marketing campaign where web traffic might surge by 1,000% for one weekend and drop back to normal on Monday. Which cloud characteristic enables resources to automatically scale out during the spike and deallocate when traffic subsides?",
+      "options": [
+        "Fault tolerance",
+        "Elasticity",
+        "Predictable latency",
+        "High availability"
+      ],
+      "correctIndex": 1,
+      "explanation": "Elasticity is the dynamic ability of a cloud system to automatically provision additional computing resources during demand surges and automatically deallocate them when load decreases, preventing overpayment for idle capacity.",
+      "whyWrong": [
+        "Fault tolerance ensures zero disruption during hardware component failure, but does not add or remove capacity dynamically.",
+        "Correct answer.",
+        "Predictable latency refers to consistent network response times, not automated scaling.",
+        "High availability keeps systems operational with high uptime, but does not describe the automated expansion/contraction of resources."
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": "q3",
+      "domain": "Azure Architecture & Services",
+      "question": "A multinational financial enterprise requires a solution that guarantees their applications can withstand an entire datacenter outage within an Azure region without suffering downtime. What should they deploy?",
+      "options": [
+        "Multiple resources across Availability Zones in the region",
+        "A single Virtual Machine with Locally Redundant Storage (LRS)",
+        "Two separate Resource Groups within the same datacenter",
+        "An Azure Policy restricting deployment to a single region"
+      ],
+      "correctIndex": 0,
+      "explanation": "Availability Zones are physically distinct datacenters within an Azure region, each equipped with independent power, cooling, and network connections. Deploying across Availability Zones protects against datacenter-level failures.",
+      "whyWrong": [
+        "Correct answer.",
+        "A single VM with LRS replicates data 3 times within a single datacenter, so a datacenter power outage will take it offline.",
+        "Resource Groups are logical management boundaries and do not provide physical isolation or fault tolerance.",
+        "Azure Policy enforces compliance rules and does not provide high-availability architecture."
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": "q4",
+      "domain": "Azure Architecture & Services",
+      "question": "Which Azure compute service allows developers to execute event-driven code in response to HTTP requests or message queues without managing servers, and charges strictly for the milliseconds the code runs?",
+      "options": [
+        "Azure Virtual Machine Scale Sets",
+        "Azure Functions",
+        "Azure Container Instances",
+        "Azure App Service (Dedicated Basic tier)"
+      ],
+      "correctIndex": 1,
+      "explanation": "Azure Functions is Microsoft's flagship serverless compute solution. It executes code upon external triggers and charges only when code is executing, with zero cost when idle.",
+      "whyWrong": [
+        "Virtual Machine Scale Sets require managing and paying for underlying VM instances even when idle.",
+        "Correct answer.",
+        "Azure Container Instances runs containerized workloads, but is not primarily a serverless function platform billed by milliseconds.",
+        "Azure App Service Dedicated tier incurs continuous monthly hourly pricing regardless of traffic."
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": "q5",
+      "domain": "Azure Management & Governance",
+      "question": "An administrator needs to ensure that even users assigned the 'Owner' role on a critical production Azure subscription CANNOT accidentally delete the production SQL Database or its virtual network. What should the administrator apply?",
+      "options": [
+        "A ReadOnly Azure Role assignment",
+        "A CanNotDelete Resource Lock on the resource group",
+        "An Azure Policy with an 'AuditIfNotExists' effect",
+        "A Microsoft Entra ID Conditional Access policy"
+      ],
+      "correctIndex": 1,
+      "explanation": "Resource Locks override RBAC permissions. A CanNotDelete lock permits authorized users (including Subscription Owners) to read and modify resources, but strictly blocks deletion until the lock itself is explicitly removed.",
+      "whyWrong": [
+        "A ReadOnly role would prevent the team from making valid routine configuration updates to the database.",
+        "Correct answer.",
+        "Azure Policy with AuditIfNotExists only logs compliance warnings and does not block deletion in real-time.",
+        "Conditional Access evaluates sign-in conditions (MFA, IP location), not specific Azure resource deletion actions."
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": "q6",
+      "domain": "Azure Management & Governance",
+      "question": "Which tool should a company use to compare the estimated financial cost of maintaining their on-premises datacenter hardware, power, cooling, and administration over 5 years against migrating those workloads to Azure?",
+      "options": [
+        "Azure Pricing Calculator",
+        "Total Cost of Ownership (TCO) Calculator",
+        "Azure Cost Management Budgets",
+        "Azure Advisor Cost Recommendations"
+      ],
+      "correctIndex": 1,
+      "explanation": "The TCO (Total Cost of Ownership) Calculator is designed specifically to estimate cost savings realized by migrating existing on-premises server infrastructure, storage, and networking workloads to Microsoft Azure.",
+      "whyWrong": [
+        "Pricing Calculator estimates individual Azure service bills before deployment, but does not model on-premises datacenter hardware or real estate comparisons.",
+        "Correct answer.",
+        "Azure Budgets sets spending alerts on currently deployed cloud resources.",
+        "Azure Advisor provides optimization tips for resources already running in an active Azure subscription."
+      ],
+      "difficulty": "Easy"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc1",
+      "domain": "Cloud Concepts",
+      "front": "What is the Shared Responsibility Model?",
+      "back": "A security framework dividing operational duties between Microsoft and the customer. You always control data, identities, and endpoints; Microsoft controls physical datacenters and host hypervisors.",
+      "analogy": "Renting an apartment: the landlord maintains the structure, but you are responsible for locking your door and safeguarding your personal property.",
+      "box": 1
+    },
+    {
+      "id": "fc2",
+      "domain": "Cloud Concepts",
+      "front": "What is the difference between CapEx and OpEx?",
+      "back": "CapEx involves large upfront physical investments depreciated over years. OpEx is ongoing pay-as-you-go consumption with no upfront cost and immediate tax deduction.",
+      "analogy": "CapEx is buying a farm truck; OpEx is hiring a delivery boda-boda or courier per trip.",
+      "box": 1
+    },
+    {
+      "id": "fc3",
+      "domain": "Azure Architecture & Services",
+      "front": "What is an Azure Availability Zone?",
+      "back": "Physically distinct datacenters within the same Azure region, each with independent power, cooling, and networking. A zone-enabled region has at least 3 distinct zones.",
+      "analogy": "Three independent bank branches in Nairobi connected by private fiber; if one suffers a transformer blowout, the other two keep operating uninterrupted.",
+      "box": 1
+    },
+    {
+      "id": "fc4",
+      "domain": "Azure Architecture & Services",
+      "front": "What is Azure ExpressRoute?",
+      "back": "A dedicated private fiber connection from your on-premises network to Azure that does NOT travel across the public internet, ensuring maximum speed and security.",
+      "analogy": "A private underground high-speed rail line directly between your corporate headquarters and the central airport.",
+      "box": 1
+    },
+    {
+      "id": "fc5",
+      "domain": "Azure Management & Governance",
+      "front": "What is a CanNotDelete Resource Lock?",
+      "back": "A protective governance lock that allows authorized users to read and modify a resource, but prevents anyone—including Subscription Owners—from deleting it.",
+      "analogy": "A tamper-proof safety seal on an emergency fire valve that prevents accidental shutdown.",
+      "box": 1
+    }
+  ],
+  "attempts": [
+    {
+      "id": "att_001",
+      "userId": "usr_001",
+      "domain": "All Topics",
+      "score": 5,
+      "total": 6,
+      "percentage": 83,
+      "timestamp": "2026-10-22T14:30:00Z"
+    }
+  ],
+  "quotes": [
+    {
+      "id": "q-1",
+      "quote": "It always seems impossible until it's done.",
+      "author": "Nelson Mandela",
+      "role": "Former President of South Africa and Nobel Laureate",
+      "tag": "Perseverance"
+    },
+    {
+      "id": "q-2",
+      "quote": "Our industry does not respect tradition — it only respects innovation.",
+      "author": "Satya Nadella",
+      "role": "CEO of Microsoft",
+      "tag": "Cloud Innovation"
+    },
+    {
+      "id": "q-3",
+      "quote": "Don't judge each day by the harvest you reap, but by the seeds that you plant.",
+      "author": "Robert Louis Stevenson",
+      "role": "Scottish Author and Thinker",
+      "tag": "Daily Growth"
+    },
+    {
+      "id": "q-4",
+      "quote": "It's the little things citizens do. That's what will make the difference. My little thing is planting trees.",
+      "author": "Wangari Maathai",
+      "role": "Kenyan Environmentalist and Nobel Peace Laureate",
+      "tag": "Consistency"
+    },
+    {
+      "id": "q-5",
+      "quote": "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing.",
+      "author": "Pelé",
+      "role": "Global Sports Icon",
+      "tag": "Mastery"
+    },
+    {
+      "id": "q-6",
+      "quote": "Knowledge is like a garden: if it is not cultivated, it cannot be harvested.",
+      "author": "African Proverb",
+      "role": "Traditional Wisdom",
+      "tag": "Lifelong Learning"
+    },
+    {
+      "id": "q-7",
+      "quote": "If you want to go fast, go alone. If you want to go far, go together.",
+      "author": "African Proverb",
+      "role": "Traditional Wisdom",
+      "tag": "Collaboration"
+    },
+    {
+      "id": "q-8",
+      "quote": "You may encounter many defeats, but you must not be defeated.",
+      "author": "Maya Angelou",
+      "role": "Author and Civil Rights Icon",
+      "tag": "Resilience"
+    },
+    {
+      "id": "q-9",
+      "quote": "Education is the premise of progress, in every society, in every family.",
+      "author": "Kofi Annan",
+      "role": "Former UN Secretary-General and Nobel Laureate",
+      "tag": "Empowerment"
+    },
+    {
+      "id": "q-10",
+      "quote": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+      "author": "Will Durant (on Aristotle)",
+      "role": "Philosopher and Historian",
+      "tag": "Habits"
+    },
+    {
+      "id": "q-11",
+      "quote": "The future belongs to those who learn more skills and combine them in creative ways.",
+      "author": "Robert Greene",
+      "role": "Author and Strategist",
+      "tag": "Skill Building"
+    },
+    {
+      "id": "q-12",
+      "quote": "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
+      "author": "Marie Curie",
+      "role": "Pioneering Scientist and Nobel Laureate",
+      "tag": "Understanding"
+    }
+  ]
+}
